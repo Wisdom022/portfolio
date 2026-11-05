@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisdom Chima Enyiche | Electrical Engineer & Energy Transition Specialist</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0B1120',
+                            cardDark: '#0F172A',
+                            accent: '#06B6D4',
+                            accentHover: '#0891B2',
+                            gold: '#F59E0B',
+                            goldHover: '#D97706'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Phosphor Icons CDN -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Glassmorphism Styles */
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-light {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B1120;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E293B;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #06B6D4;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 dark:bg-brand-navy dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-brand-accent selection:text-brand-navy">
+
+    <!-- HEADER & NAVIGATION -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-slate-800/80 bg-slate-900/90 dark:bg-brand-navy/90 backdrop-blur-md" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Signature -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-accent to-brand-gold flex items-center justify-center font-extrabold text-brand-navy text-lg shadow-lg group-hover:scale-105 transition-transform">
+                        WE
+                    </div>
+                    <div>
+                        <span class="block text-base sm:text-lg font-bold tracking-tight text-white dark:text-white group-hover:text-brand-accent transition-colors">Wisdom C. Enyiche</span>
+                        <span class="block text-xs text-slate-400">Energy & Power Specialist</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-7 text-sm font-medium">
+                    <a href="#about" class="hover:text-brand-accent transition-colors">About</a>
+                    <a href="#skills" class="hover:text-brand-accent transition-colors">Competencies</a>
+                    <a href="#projects" class="hover:text-brand-accent transition-colors">Projects</a>
+                    <a href="#experience" class="hover:text-brand-accent transition-colors">Trajectory</a>
+                    <a href="#contact" class="hover:text-brand-accent transition-colors">Contact</a>
+
+                    <!-- Theme Switcher Button -->
+                    <button id="theme-toggle" onclick="toggleTheme()" class="p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-brand-accent transition-colors">
+                        <i id="theme-icon" class="ph ph-moon text-lg"></i>
+                    </button>
+
+                    <!-- Contact CTA -->
+                    <a href="#contact" class="px-5 py-2.5 rounded-xl bg-brand-accent text-brand-navy font-bold hover:bg-cyan-400 transition-all shadow-lg shadow-cyan-500/20">
+                        Connect
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu & Theme Button -->
+                <div class="flex items-center gap-3 md:hidden">
+                    <button onclick="toggleTheme()" class="p-2 rounded-lg bg-slate-800 text-slate-300">
+                        <i id="theme-icon-mobile" class="ph ph-moon text-lg"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-300 hover:bg-slate-800">
+                        <i class="ph ph-list text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 dark:bg-slate-900 border-b border-slate-800 px-4 pt-3 pb-6 space-y-3">
+            <a href="#about" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-slate-800">About</a>
+            <a href="#skills" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-slate-800">Competencies</a>
+            <a href="#projects" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-slate-800">Projects</a>
+            <a href="#experience" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-slate-800">Trajectory</a>
+            <a href="#contact" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-slate-800">Contact</a>
+        </div>
+    </header>
+
+    <!-- SECTION 1: HERO SECTION -->
+    <section id="home" class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden min-h-screen flex items-center">
+        <!-- Glow accents -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-brand-accent/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Main Intro Content -->
+                <div class="lg:col-span-8 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800 border border-slate-700/60 text-xs sm:text-sm font-medium text-brand-accent">
+                        <span class="w-2 h-2 rounded-full bg-brand-accent animate-ping"></span>
+                        First-Class Honors Engineer
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight text-white">
+                        Wisdom Chima <br/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-teal-300 to-brand-gold">Enyiche</span>
+                    </h1>
+
+                    <p class="text-xl sm:text-2xl font-medium text-slate-300">
+                        Electrical & Power Systems Engineer | Energy Transition Specialist
+                    </p>
+
+                    <p class="text-base sm:text-lg text-slate-400 max-w-2xl leading-relaxed">
+                        Combining first-principles electrical engineering with petroleum economics and digital automation. Dedicated to optimizing heavy turbomachinery, power systems reliability, and sustainable energy pathways.
+                    </p>
+
+                    <!-- Call To Action Buttons -->
+                    <div class="pt-4 flex flex-wrap gap-4 items-center">
+                        <a href="#projects" class="px-6 py-3.5 rounded-xl bg-brand-accent text-brand-navy font-bold hover:bg-cyan-400 transition-all shadow-lg shadow-cyan-500/20 flex items-center gap-2 group">
+                            <span>Explore Case Studies</span>
+                            <i class="ph ph-arrow-right text-lg group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <button onclick="openResumeModal()" class="px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold border border-slate-700 transition-all flex items-center gap-2">
+                            <i class="ph ph-file-text text-brand-gold text-xl"></i>
+                            <span>View Resume / CV</span>
+                        </button>
+                    </div>
+
+                    <!-- Meta / Location Info -->
+                    <div class="pt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-slate-800 text-xs sm:text-sm text-slate-400">
+                        <div class="flex items-center gap-2">
+                            <i class="ph ph-map-pin text-brand-accent text-lg"></i>
+                            <span>Port Harcourt, Nigeria</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="ph ph-graduation-cap text-brand-accent text-lg"></i>
+                            <span>AFE Babalola Univ (B.Eng)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="ph ph-buildings text-brand-accent text-lg"></i>
+                            <span>UniPort IPES (M.Sc)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="ph ph-certificate text-brand-accent text-lg"></i>
+                            <span>NEBOSH IGC Certified</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Highlight Profile Card -->
+                <div class="lg:col-span-4">
+                    <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 sm:p-8 relative overflow-hidden shadow-2xl">
+                        <div class="absolute top-0 right-0 -mr-6 -mt-6 w-24 h-24 bg-brand-accent/10 rounded-full blur-xl"></div>
+                        
+                        <div class="text-center mb-6">
+                            <div class="w-24 h-24 mx-auto rounded-2xl bg-gradient-to-tr from-brand-accent via-slate-700 to-brand-gold p-1 shadow-lg mb-4">
+                                <div class="w-full h-full bg-slate-900 rounded-[14px] flex items-center justify-center font-bold text-3xl text-brand-accent">
+                                    WCE
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-bold text-white">Engr. Wisdom C. Enyiche</h3>
+                            <p class="text-xs text-slate-400">MNSE.</p>
+                        </div>
+
+                        <div class="space-y-3 text-xs">
+                            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-700/60 flex justify-between items-center">
+                                <span class="text-slate-400">Undergraduate Degree</span>
+                                <span class="font-semibold text-brand-gold">First Class Honors</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-700/60 flex justify-between items-center">
+                                <span class="text-slate-400">Power Systems Award</span>
+                                <span class="font-semibold text-brand-accent">Best Graduating Student</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-700/60 flex justify-between items-center">
+                                <span class="text-slate-400">Turbomachinery</span>
+                                <span class="font-semibold text-white">GE Frame 5 & 3 Focus</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: ABOUT & ACADEMIC STANDING -->
+    <section id="about" class="py-20 bg-slate-800/40 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="bg-slate-900 border border-slate-700 rounded-2xl p-8 relative overflow-hidden">
+                        <div class="text-brand-accent text-4xl mb-4">
+                            <i class="ph ph-quotes"></i>
+                        </div>
+                        <blockquote class="text-base sm:text-lg font-medium text-slate-200 leading-relaxed italic">
+                            "Engineering excellence demands bridging raw industrial diagnostics with data driven decision frameworks. Energy transition is not an immediate shift, but a calculated engineering evolution."
+                        </blockquote>
+                        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+                            <div>
+                                <div class="text-sm font-bold text-white">Wisdom Chima Enyiche</div>
+                                <div class="text-xs text-slate-400">Energy & Power Engineer</div>
+                            </div>
+                            <i class="ph ph-lightning text-2xl text-brand-gold"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-6">
+                    <div>
+                        <span class="text-xs font-bold text-brand-accent uppercase tracking-widest">Background & Objective</span>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-white mt-1">Bridging Technical Rigor with Energy Strategy</h2>
+                    </div>
+
+                    <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                        I am an Electrical & Electronics Engineer holding a <strong>First Class Honors</strong> degree from <strong>AFE Babalola University</strong>, where I was recognized as the <em>Best Graduating Student in Power Systems</em>. My technical foundation is built on heavy electrical equipment diagnostics, turbomachinery maintenance, and high voltage motor testing.
+                    </p>
+
+                    <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                        Currently pursuing an M.Sc. in Petroleum Project Development and Energy Transition at the <strong>Institute of Petroleum and Energy Studies (IPES), University of Port Harcourt And IFP Energies nouvelles FRANCE</strong>, my objective is to solve complex engineering challenges across energy systems, integrating safety compliance (NEBOSH IGC) and modern software tools (Python, MATLAB, ESP32 microcontrollers).
+                    </p>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2">
+                        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+                            <i class="ph ph-graduation-cap text-2xl text-brand-accent mb-1"></i>
+                            <div class="text-xs text-slate-400">AFE Babalola Univ</div>
+                            <div class="text-sm font-bold text-white mt-0.5">B.Eng. First Class</div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+                            <i class="ph ph-globe-hemisphere-west text-2xl text-brand-gold mb-1"></i>
+                            <div class="text-xs text-slate-400">UniPort/IFP IPES</div>
+                            <div class="text-sm font-bold text-white mt-0.5">M.Sc. Candidate</div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+                            <i class="ph ph-shield-check text-2xl text-teal-400 mb-1"></i>
+                            <div class="text-xs text-slate-400">Safety Standard</div>
+                            <div class="text-sm font-bold text-white mt-0.5">NEBOSH IGC</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: CORE COMPETENCIES & TECHNICAL SKILLS -->
+    <section id="skills" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold text-brand-accent uppercase tracking-widest">Skillsets</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">Technical & Strategic Competencies</h2>
+                <p class="text-slate-400 mt-3 text-sm sm:text-base">Domain expertise across power infrastructure, project management, and hardware/software integration.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="bg-slate-800/50 border border-slate-700/80 rounded-2xl p-6 hover:border-brand-accent transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-brand-accent/10 text-brand-accent flex items-center justify-center text-2xl mb-6">
+                        <i class="ph ph-lightning"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Power & Turbomachinery</h3>
+                    <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+                        <li class="flex items-start gap-2">
+                            <i class="ph ph-check-circle text-brand-accent text-base shrink-0 mt-0.5"></i>
+                            <span>GE Frame 5, 3 & 1 Gas Turbine Overhaul & Maintenance</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="ph ph-check-circle text-brand-accent text-base shrink-0 mt-0.5"></i>
+                            <span>High Voltage AC Induction Motor Insulation Testing</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="ph ph-check-circle text-brand-accent text-base shrink-0 mt-0.5"></i>
+                            <span>Power System Analysis & Fault Diagnostics</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="ph ph-check-circle text-brand-accent text-base shrink-0 mt-0.5"></i>
+                            <span>Substation & Switchgear Safety Inspections</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-slate-800/50 border border-slate-700/80 rounded-2xl p-6 hover:border-brand-gold transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-2xl mb-6">
+                        <i class="ph ph-chart-line-up"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Energy & Project Strategy</h3>
+                    <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+                        <li class="flex items-start gap-2">
+                            <i class="ph ph-check-circle text-brand-gold text-base shrink-0 mt-0.5"></i>
+                            <span>Petroleum Project Economics & Investment Appraisal</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="ph ph-check-circle text-brand-gold text-base shrink-0 mt-0.5"></i>
+                            <span>NEBOSH IGC Workplace Risk Assessment & Safety Audit</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="ph ph-check-circle text-brand-gold text-base shrink-0 mt-0.5"></i>
+                            <span>PRINCE2 Structured Project Execution Framework</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="ph ph-check-circle text-brand-gold text-base shrink-0 mt-0.5"></i>
+                            <span>Low-Carbon Transition & Decarbonization Pathways</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-slate-800/50 border border-slate-700/80 rounded-2xl p-6 hover:border-teal-400 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-teal-500/10 text-teal-400 flex items-center justify-center text-2xl mb-6">
+                        <i class="ph ph-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Software & Hardware</h3>
+                    <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+                        <li class="flex items-start gap-2">
+                            <i class="ph ph-check-circle text-teal-400 text-base shrink-0 mt-0.5"></i>
+                            <span>Python Scripting for Engineering Analytics (NumPy, Pandas)</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="ph ph-check-circle text-teal-400 text-base shrink-0 mt-0.5"></i>
+                            <span>MATLAB & Simulink Circuit Modeling</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="ph ph-check-circle text-teal-400 text-base shrink-0 mt-0.5"></i>
+                            <span>ESP32 Microcontroller Embedded IoT Solutions</span>
+                        </li>
+        
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: FEATURED PROJECTS & CASE STUDIES -->
+    <section id="projects" class="py-20 bg-slate-800/40 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                <div>
+                    <span class="text-xs font-bold text-brand-accent uppercase tracking-widest">Portfolio Case Studies</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mt-1">Featured Technical Deliverables</h2>
+                </div>
+                
+                <!-- Category Filter Buttons -->
+                <div class="flex flex-wrap gap-2 mt-4 md:mt-0 text-xs font-medium">
+                    <button onclick="filterProjects('all')" class="filter-btn active px-4 py-2 rounded-lg bg-brand-accent text-brand-navy font-bold transition-all" data-category="all">All Projects</button>
+                    <button onclick="filterProjects('fieldwork')" class="filter-btn px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-all" data-category="fieldwork">Engineering & Field</button>
+                    <button onclick="filterProjects('energy')" class="filter-btn px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-all" data-category="energy">Energy Transition</button>
+                    <button onclick="filterProjects('software')" class="filter-btn px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-all" data-category="software">Software & Data</button>
+                </div>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1 -->
+                <div class="project-card bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-brand-accent transition-all cursor-pointer group flex flex-col justify-between" data-category="fieldwork" onclick="openModal('project1')">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-3 py-1 rounded-full bg-brand-accent/10 text-brand-accent text-xs font-semibold">Engineering & Fieldwork</span>
+                            <i class="ph ph-arrow-up-right text-slate-500 group-hover:text-brand-accent text-xl transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-brand-accent transition-colors">GE Frame 5 Gas Turbine Overhaul</h3>
+                        <p class="text-xs sm:text-sm text-slate-400 mt-2 line-clamp-3">Precision disassembly, stator/rotor insulation diagnostics, component tagging, and preventive maintenance on heavy industrial gas turbines.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex flex-wrap gap-2 text-xs font-mono text-slate-400">
+                        <span class="px-2 py-1 rounded bg-slate-800">GE Frame 5</span>
+                        <span class="px-2 py-1 rounded bg-slate-800">HV Motors</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-brand-gold transition-all cursor-pointer group flex flex-col justify-between" data-category="energy" onclick="openModal('project2')">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-3 py-1 rounded-full bg-brand-gold/10 text-brand-gold text-xs font-semibold">Energy Transition</span>
+                            <i class="ph ph-arrow-up-right text-slate-500 group-hover:text-brand-gold text-xl transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-brand-gold transition-colors">Subsea Asset Integrity & Economics</h3>
+                        <p class="text-xs sm:text-sm text-slate-400 mt-2 line-clamp-3">Modelling subsea pipeline cathodic protection integrity and financial risk analysis for offshore oil and gas developments transitioning to hybrid power.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex flex-wrap gap-2 text-xs font-mono text-slate-400">
+                        <span class="px-2 py-1 rounded bg-slate-800">UniPort IPES</span>
+                        <span class="px-2 py-1 rounded bg-slate-800">Cathodic Protection</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-teal-400 transition-all cursor-pointer group flex flex-col justify-between" data-category="software" onclick="openModal('project3')">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-3 py-1 rounded-full bg-teal-500/10 text-teal-400 text-xs font-semibold">Software & Hardware</span>
+                            <i class="ph ph-arrow-up-right text-slate-500 group-hover:text-teal-400 text-xl transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-teal-400 transition-colors">ESP32 IoT Power System Monitor</h3>
+                        <p class="text-xs sm:text-sm text-slate-400 mt-2 line-clamp-3">Development of an embedded micro-controller system tracking voltage spikes, heat telemetry, and automated load balancing for industrial generators.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex flex-wrap gap-2 text-xs font-mono text-slate-400">
+                        <span class="px-2 py-1 rounded bg-slate-800">ESP32</span>
+                        <span class="px-2 py-1 rounded bg-slate-800">Python Data Log</span>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-brand-accent transition-all cursor-pointer group flex flex-col justify-between" data-category="fieldwork" onclick="openModal('project4')">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-3 py-1 rounded-full bg-brand-accent/10 text-brand-accent text-xs font-semibold">Safety & HSE</span>
+                            <i class="ph ph-arrow-up-right text-slate-500 group-hover:text-brand-accent text-xl transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-brand-accent transition-colors">NEBOSH Plant Hazard & Safety Audit</h3>
+                        <p class="text-xs sm:text-sm text-slate-400 mt-2 line-clamp-3">Comprehensive plant hazard identification, risk rating matrix, and installation of preventive safety protocols compliant with NEBOSH standards.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex flex-wrap gap-2 text-xs font-mono text-slate-400">
+                        <span class="px-2 py-1 rounded bg-slate-800">NEBOSH IGC</span>
+                        <span class="px-2 py-1 rounded bg-slate-800">HSE Audit</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: CAREER & ACADEMIC TRAJECTORY -->
+    <section id="experience" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold text-brand-accent uppercase tracking-widest">Academic & Work Journey</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">Professional Trajectory</h2>
+                <p class="text-slate-400 mt-3 text-sm sm:text-base">Demonstrated academic leadership and continuous technical development.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto relative border-l-2 border-slate-800 ml-4 sm:ml-32 space-y-12">
+                
+                <!-- Timeline item 1 -->
+                <div class="relative pl-8 sm:pl-12">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand-accent ring-4 ring-slate-900"></div>
+                    <div class="sm:absolute sm:-left-36 sm:top-1 text-xs font-mono text-brand-accent font-bold uppercase mb-2 sm:mb-0">
+                        2024 – Present
+                    </div>
+                    <div class="bg-slate-800/60 border border-slate-700/80 rounded-2xl p-6">
+                        <span class="text-xs font-semibold text-brand-accent uppercase tracking-wider">Postgraduate Scholar</span>
+                        <h3 class="text-xl font-bold text-white mt-1">M.Sc. Candidate, Petroleum Project Development & Energy Transition</h3>
+                        <p class="text-xs text-slate-400">Institute of Petroleum & Energy Studies (IPES), University of Port Harcourt</p>
+                        <p class="text-sm text-slate-300 mt-3 leading-relaxed">
+                            Focusing on low-carbon energy economics, project appraisal, decarbonization strategy, and subsea asset lifecycle modeling.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline item 2 -->
+                <div class="relative pl-8 sm:pl-12">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand-gold ring-4 ring-slate-900"></div>
+                    <div class="sm:absolute sm:-left-36 sm:top-1 text-xs font-mono text-brand-gold font-bold uppercase mb-2 sm:mb-0">
+                        Field Service
+                    </div>
+                    <div class="bg-slate-800/60 border border-slate-700/80 rounded-2xl p-6">
+                        <span class="text-xs font-semibold text-brand-gold uppercase tracking-wider">Engineering Operations</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Electrical Service & Maintenance Specialist</h3>
+                        <p class="text-xs text-slate-400">Turbomachinery & Power Infrastructure Units</p>
+                        <p class="text-sm text-slate-300 mt-3 leading-relaxed">
+                            Executed diagnostic insulation checks on heavy high-voltage AC motors, turbine tagging, electrical controls troubleshooting, and safety protocol enforcement.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline item 3 -->
+                <div class="relative pl-8 sm:pl-12">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-teal-400 ring-4 ring-slate-900"></div>
+                    <div class="sm:absolute sm:-left-36 sm:top-1 text-xs font-mono text-teal-400 font-bold uppercase mb-2 sm:mb-0">
+                        Undergraduate
+                    </div>
+                    <div class="bg-slate-800/60 border border-slate-700/80 rounded-2xl p-6">
+                        <span class="text-xs font-semibold text-teal-400 uppercase tracking-wider">Bachelor's Degree</span>
+                        <h3 class="text-xl font-bold text-white mt-1">B.Eng. Electrical & Electronics Engineering</h3>
+                        <p class="text-xs text-slate-400">AFE Babalola University (ABUAD)</p>
+                        <div class="mt-3 flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded bg-brand-gold/20 text-brand-gold text-xs font-bold">First Class Honors</span>
+                            <span class="px-2.5 py-1 rounded bg-brand-accent/20 text-brand-accent text-xs font-bold">Best Graduating Student (Power Systems)</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: CONTACT & RESUME DOWNLOAD -->
+    <section id="contact" class="py-20 bg-slate-800/40 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <span class="text-xs font-bold text-brand-accent uppercase tracking-widest">Get In Touch</span>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-white mt-1">Let's Connect & Collaborate</h2>
+                    </div>
+
+                    <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                        Available for technical consultation, power systems engineering roles, or low-carbon energy research initiatives.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-slate-900 border border-slate-800">
+                            <div class="p-3 rounded-lg bg-brand-accent/10 text-brand-accent text-xl">
+                                <i class="ph ph-envelope-simple"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400">Direct Email</div>
+                                <a href="mailto:wisdom.enyiche@example.com" class="text-sm font-semibold text-white hover:text-brand-accent transition-colors">wisdom.enyiche@example.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-slate-900 border border-slate-800">
+                            <div class="p-3 rounded-lg bg-brand-gold/10 text-brand-gold text-xl">
+                                <i class="ph ph-map-pin"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400">Primary Location</div>
+                                <div class="text-sm font-semibold text-white">Port Harcourt, Rivers State, Nigeria</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-gradient-to-r from-slate-900 to-slate-800 border border-slate-700 space-y-3">
+                        <h4 class="text-base font-bold text-white">Download Curriculum Vitae</h4>
+                        <p class="text-xs text-slate-300">Access full details regarding technical research papers, academic awards, and project summaries.</p>
+                        <button onclick="openResumeModal()" class="w-full py-3 rounded-xl bg-brand-gold hover:bg-goldHover text-brand-navy font-bold text-sm transition-colors flex items-center justify-center gap-2">
+                            <i class="ph ph-file-arrow-down text-lg"></i>
+                            <span>View / Download Resume (PDF)</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Live Contact Form -->
+                <div class="lg:col-span-7">
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8">
+                        <h3 class="text-xl font-bold text-white mb-6">Send an Inquiry</h3>
+                        
+                        <form id="contact-form" onsubmit="handleContact(event)" class="space-y-4">
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-300 mb-1">Full Name</label>
+                                    <input type="text" id="contact-name" required placeholder="e.g., Engr. David Lawson" class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-brand-accent transition-colors text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-300 mb-1">Email Address</label>
+                                    <input type="email" id="contact-email" required placeholder="name@organization.com" class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-brand-accent transition-colors text-sm">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-medium text-slate-300 mb-1">Subject</label>
+                                <input type="text" id="contact-subject" required placeholder="Project Inquiry / Technical Collaboration" class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-brand-accent transition-colors text-sm">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-medium text-slate-300 mb-1">Message</label>
+                                <textarea id="contact-message" rows="5" required placeholder="Describe your inquiry..." class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-brand-accent transition-colors text-sm"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-3.5 rounded-xl bg-brand-accent hover:bg-cyan-400 text-brand-navy font-bold transition-all flex items-center justify-center gap-2">
+                                <i class="ph ph-paper-plane-tilt text-lg"></i>
+                                <span>Send Message</span>
+                            </button>
+                        </form>
+
+                        <div id="contact-success" class="hidden mt-4 p-4 rounded-xl bg-teal-500/10 border border-teal-500/30 text-teal-300 text-sm text-center">
+                            Message received! Engr. Wisdom will get back to you shortly.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-8 bg-slate-900 border-t border-slate-800 text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                &copy; 2026 Engr. Wisdom Chima Enyiche. All Rights Reserved.
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="#home" class="hover:text-slate-300 transition-colors">Back to Top</a>
+                <span>&bull;</span>
+                <span>AFE Babalola Univ & UniPort Alumnus</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- STAR-I PROJECT MODAL -->
+    <div id="project-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-700 max-w-2xl w-full rounded-2xl p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal()" class="absolute top-4 right-4 p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
+                <i class="ph ph-x text-xl"></i>
+            </button>
+            <div id="modal-body">
+                <!-- Dynamically injected content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- RESUME MODAL -->
+    <div id="resume-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-700 max-w-3xl w-full rounded-2xl p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeResumeModal()" class="absolute top-4 right-4 p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
+                <i class="ph ph-x text-xl"></i>
+            </button>
+            <div class="space-y-6">
+                <div class="border-b border-slate-800 pb-4">
+                    <span class="text-xs font-bold text-brand-accent uppercase tracking-widest">Document Preview</span>
+                    <h3 class="text-2xl font-bold text-white mt-1">Curriculum Vitae — Wisdom C. Enyiche</h3>
+                </div>
+
+                <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-6 space-y-4 text-xs sm:text-sm text-slate-300">
+                    <div>
+                        <h4 class="font-bold text-brand-gold uppercase text-xs">Education</h4>
+                        <p class="text-white font-semibold mt-1">M.Sc. Petroleum Project Development & Energy Transition</p>
+                        <p class="text-slate-400 text-xs">Institute of Petroleum & Energy Studies (IPES), UniPort (Ongoing)</p>
+                        
+                        <p class="text-white font-semibold mt-3">B.Eng. Electrical & Electronics Engineering (First Class Honors)</p>
+                        <p class="text-slate-400 text-xs">AFE Babalola University (ABUAD) — Best Graduating Student (Power Systems)</p>
+                    </div>
+
+                    <div class="border-t border-slate-700/60 pt-3">
+                        <h4 class="font-bold text-brand-gold uppercase text-xs">Certifications</h4>
+                        <p class="text-slate-200 mt-1">&bull; COREN Registered Engineer</p>
+                        <p class="text-slate-200">&bull; NEBOSH International General Certificate (IGC)</p>
+                        <p class="text-slate-200">&bull; Member, Nigerian Society of Engineers (MNSE)</p>
+                    </div>
+                </div>
+
+                <div class="flex justify-end gap-3">
+                    <button onclick="closeResumeModal()" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-sm font-medium">Close</button>
+                    <button onclick="alert('Starting PDF Download...')" class="px-5 py-2.5 rounded-xl bg-brand-gold hover:bg-goldHover text-brand-navy text-sm font-bold flex items-center gap-2">
+                        <i class="ph ph-download-simple"></i>
+                        <span>Download PDF</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Theme Toggle (Dark / Light)
+        function toggleTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+            const iconMobile = document.getElementById('theme-icon-mobile');
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                icon.className = 'ph ph-sun text-lg';
+                iconMobile.className = 'ph ph-sun text-lg';
+            } else {
+                html.classList.add('dark');
+                icon.className = 'ph ph-moon text-lg';
+                iconMobile.className = 'ph ph-moon text-lg';
+            }
+        }
+
+        // Project Filtering
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-category') === category) {
+                    btn.classList.add('bg-brand-accent', 'text-brand-navy', 'font-bold');
+                    btn.classList.remove('bg-slate-800', 'text-slate-300');
+                } else {
+                    btn.classList.remove('bg-brand-accent', 'text-brand-navy', 'font-bold');
+                    btn.classList.add('bg-slate-800', 'text-slate-300');
+                }
+            });
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // STAR-I Modal Details
+        const projectDetails = {
+            project1: {
+                title: "GE Frame 5 Gas Turbine Overhaul",
+                category: "Engineering & Fieldwork",
+                star: {
+                    situation: "Scheduled major overhaul and diagnostic maintenance of GE Frame 5 turbomachinery units during plant turnaround.",
+                    task: "Ensure high-precision component tagging, stator/rotor insulation resistance testing, and maintenance of auxiliary power systems.",
+                    action: "Executed methodical disassembly, applied megohmmeter insulation tests on high-voltage AC motors, and cataloged component clearances according to OEM specs.",
+                    result: "Zero maintenance-induced downtime post-commissioning and full verification of stator winding integrity.",
+                    impact: "Extended operating lifespan of turbine units and avoided unscheduled operational trips."
+                }
+            },
+            project2: {
+                title: "Subsea Asset Integrity & Economics",
+                category: "Energy Transition Strategy",
+                star: {
+                    situation: "Evaluating subsea pipeline corrosion mitigation and power supply optimization in offshore platforms.",
+                    task: "Build predictive models for cathodic protection performance while modeling investment returns for hybrid power generation.",
+                    action: "Simulated sacrificial anode dissolution rates and developed discounted cash-flow (DCF) models in Python for low-carbon power retrofits.",
+                    result: "Delivered economic justification for hybrid power installation reducing carbon emissions by 18%.",
+                    impact: "Formed primary thesis content for M.Sc. studies at UniPort IPES."
+                }
+            },
+            project3: {
+                title: "ESP32 IoT Power System Monitor",
+                category: "Software & Hardware",
+                star: {
+                    situation: "Absence of real-time remote telemetry for diesel generator sets in off-grid power installations.",
+                    task: "Design an affordable embedded IoT sensor array to measure voltage fluctuation, temperature, and current overload.",
+                    action: "Programmed ESP32 microcontrollers in C++/Python, connected current transformers, and built a live telemetry dashboard.",
+                    result: "Achieved real-time failure alert dispatch within 500ms of voltage irregularity.",
+                    impact: "Prevented generator stator burnout across test sites."
+                }
+            },
+            project4: {
+                title: "NEBOSH Plant Hazard & Safety Audit",
+                category: "HSE & Compliance",
+                star: {
+                    situation: "Industrial plant requirement for comprehensive hazard audit prior to major operational expansion.",
+                    task: "Identify physical, electrical, and environmental hazards under NEBOSH International standards.",
+                    action: "Conducted site inspection, constructed risk assessment matrix, and established standard operating procedures for switchgear handling.",
+                    result: "Achieved 100% compliance score during final external safety audit.",
+                    impact: "Established safer working conditions for over 40 field technicians."
+                }
+            }
+        };
+
+        function openModal(key) {
+            const data = projectDetails[key];
+            if (!data) return;
+
+            const modalBody = document.getElementById('modal-body');
+            modalBody.innerHTML = `
+                <span class="text-xs font-bold text-brand-accent uppercase tracking-widest">${data.category}</span>
+                <h3 class="text-2xl font-bold text-white mt-1 mb-6">${data.title}</h3>
+                
+                <div class="space-y-4 text-xs sm:text-sm">
+                    <div class="p-4 rounded-xl bg-slate-800/80 border border-slate-700">
+                        <span class="font-bold text-brand-gold block mb-1">S — Situation</span>
+                        <p class="text-slate-300 leading-relaxed">${data.star.situation}</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-800/80 border border-slate-700">
+                        <span class="font-bold text-brand-gold block mb-1">T — Task</span>
+                        <p class="text-slate-300 leading-relaxed">${data.star.task}</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-800/80 border border-slate-700">
+                        <span class="font-bold text-brand-gold block mb-1">A — Action</span>
+                        <p class="text-slate-300 leading-relaxed">${data.star.action}</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-800/80 border border-slate-700">
+                        <span class="font-bold text-brand-gold block mb-1">R — Result</span>
+                        <p class="text-slate-300 leading-relaxed">${data.star.result}</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-800/80 border border-slate-700">
+                        <span class="font-bold text-brand-accent block mb-1">I — Quantifiable Impact</span>
+                        <p class="text-slate-300 leading-relaxed">${data.star.impact}</p>
+                    </div>
+                </div>
+            `;
+            document.getElementById('project-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('project-modal').classList.add('hidden');
+        }
+
+        function openResumeModal() {
+            document.getElementById('resume-modal').classList.remove('hidden');
+        }
+
+        function closeResumeModal() {
+            document.getElementById('resume-modal').classList.add('hidden');
+        }
+
+        // Contact Form Handle
+        function handleContact(e) {
+            e.preventDefault();
+            const successBox = document.getElementById('contact-success');
+            const form = document.getElementById('contact-form');
+            successBox.classList.remove('hidden');
+            form.reset();
+            setTimeout(() => successBox.classList.add('hidden'), 5000);
+        }
+    </script>
+</body>
+</html>
